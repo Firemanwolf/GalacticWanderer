@@ -13,30 +13,7 @@ MonoBehaviour:
   m_Name: Test 2
   m_EditorClassIdentifier: 
   dialogue:
-  - dialgoueText: This is test 2
-    shy: 0
-    angry: 0
-    happy: 0
-    sad: 0
-    shy2: 0
-    angry2: 0
-    happy2: 0
-    sad2: 0
-    idle2: 0
-    shy3: 0
-    angry3: 0
-    happy3: 0
-    sad3: 0
-    idle3: 0
-    shy4: 0
-    angry4: 0
-    happy4: 0
-    sad4: 0
-    idle4: 0
-    shy5: 0
-    angry5: 0
-    happy5: 0
-    sad5: 0
-    idle5: 0
-    noavator: 0
+  - speaker: 
+    dialgoueText: This is test 2
+    clipBoardInfo: THIS GUY HAS CANCER
   responses: []
