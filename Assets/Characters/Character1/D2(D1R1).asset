@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd3c55e890d7a09409c4a4a5c92a338f, type: 3}
+  m_Name: D2(D1R1)
+  m_EditorClassIdentifier: 
+  dialogue:
+  - speaker: You
+    dialgoueText: 'Welcome to the Intergalactic Rejuvenation Center, the neutral
+      ground and treatment facility open to all sentient life forms. How may I help
+      you today? '
+    clipBoardInfo: 
+    spriteIndex: 0
+  - speaker: Character 1
+    dialgoueText: 'Those damn heathens! They managed to graze me with one of their
+      lasers. Give me your strongest medicine. Anything quick will do. I need to
+      be back in the field as soon as possible. Who knows when their next assault
+      will be?!  '
+    clipBoardInfo: Grazed by lasers
+    spriteIndex: 0
+  responses: []

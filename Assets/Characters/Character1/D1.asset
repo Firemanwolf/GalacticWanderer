@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd3c55e890d7a09409c4a4a5c92a338f, type: 3}
+  m_Name: D1
+  m_EditorClassIdentifier: 
+  dialogue:
+  - speaker: Intro
+    dialgoueText: 'A battleworn soldier approaches you, his piercing gaze fixed on
+      you as he waits for you to say something. '
+    clipBoardInfo: 
+    spriteIndex: 0
+  responses:
+  - responeText: 'Greet them with a warm welcome '
+    dialogueObject: {fileID: 11400000, guid: 65f4337f39abaf846a44318665b63b82, type: 2}
+    Transition: 0
+  - responeText: 'Directly ask about their condition '
+    dialogueObject: {fileID: 11400000, guid: cd44a40812a65d842bb09dc70922d263, type: 2}
+    Transition: 0
+  - responeText: 'Decline to see them '
+    dialogueObject: {fileID: 11400000, guid: 3f47613c7d3b24f42aea60196a18827f, type: 2}
+    Transition: 0

@@ -10,8 +10,7 @@ public class DialogueObject : ScriptableObject
     public DialogueContent[] Dialogue => dialogue;
 
     public bool HasResponses => Responses != null && Responses.Length > 0;
-
-    public bool Blackout => false;
+    
 
     public Response[] Responses => responses;
 

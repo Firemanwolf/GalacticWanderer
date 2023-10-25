@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd3c55e890d7a09409c4a4a5c92a338f, type: 3}
+  m_Name: D4(D1R3)
+  m_EditorClassIdentifier: 
+  dialogue:
+  - speaker: You
+    dialgoueText: "I\u2019m sorry, we won\u2019t be able to treat you today. Supplies
+      are tight and there is only so much we can do. "
+    clipBoardInfo: 
+    spriteIndex: 0
+  - speaker: Character 4
+    dialgoueText: "It\u2019s not like I wanted to be here anyways\u2026. If it wasn\u2019t
+      for my orders, I would still be out there fighting! Thanks for nothing!  "
+    clipBoardInfo: 
+    spriteIndex: 0
+  responses: []

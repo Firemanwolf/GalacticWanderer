@@ -11,8 +11,7 @@ public class ResponseHandler : MonoBehaviour
     [SerializeField] private RectTransform responseContainer;
 
     private DialogueUI dialogueUI;
-    [SerializeField] GameObject lvmanager;
-    LevelLoader lvLoader;
+
 
     List<GameObject> tempResponseButton = new List<GameObject>();
 
@@ -30,13 +29,14 @@ public class ResponseHandler : MonoBehaviour
         {
             GameObject responseButton = Instantiate(responseButtonTemplate.gameObject, responseContainer);
             responseButton.gameObject.SetActive(true);
-            responseButton.GetComponent<TextMeshProUGUI>().text = response.ResponseText;
+            responseButton.GetComponentInChildren<TextMeshProUGUI>().text = response.ResponseText;
             responseButton.GetComponent<Button>().onClick.AddListener(() => OnPickedResponse(response));
             tempResponseButton.Add(responseButton);
 
             responseBoxHeight += responseButtonTemplate.sizeDelta.y;
         }
         responseBox.sizeDelta = new Vector2(responseBox.sizeDelta.x, responseBoxHeight);
+
         responseBox.gameObject.SetActive(true);
     }
 private void OnPickedResponse(Response response)

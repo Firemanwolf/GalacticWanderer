@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 7ba74b290e18ff84aae924bbb97872be
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Itim
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 475305cf564989d4cb821de0c7473aed, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

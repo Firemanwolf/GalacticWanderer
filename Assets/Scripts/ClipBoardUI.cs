@@ -10,12 +10,14 @@ public class ClipBoardUI : MonoBehaviour
     void OnEnable()
     {
         DialogueUI.OnLearnInfo += OnAddInfo;
+        DialogueUI.OnNextCharacter += ClearBoard;
     }
 
 
     void OnDisable()
     {
         DialogueUI.OnLearnInfo -= OnAddInfo;
+        DialogueUI.OnNextCharacter -= ClearBoard;
     }
 
 
@@ -33,6 +35,7 @@ public class ClipBoardUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        infos.Clear();
 
         for (int i = 0; i < clipboard.childCount; i++)
         {
@@ -43,10 +46,19 @@ public class ClipBoardUI : MonoBehaviour
             text.text = String.Empty;
         }
     }
-
+    
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void ClearBoard()
+    {
+        foreach (var text in texts)
+        {
+            text.text = String.Empty;
+        }
+        infos.Clear();
     }
 }
