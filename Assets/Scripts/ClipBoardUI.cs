@@ -46,12 +46,6 @@ public class ClipBoardUI : MonoBehaviour
             text.text = String.Empty;
         }
     }
-    
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void ClearBoard()
     {
