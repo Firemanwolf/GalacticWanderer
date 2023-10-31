@@ -28,3 +28,9 @@ MonoBehaviour:
   - responeText: 'Decline to see them '
     dialogueObject: {fileID: 11400000, guid: 3f47613c7d3b24f42aea60196a18827f, type: 2}
     Transition: 0
+  - responeText: Test1
+    dialogueObject: {fileID: 11400000, guid: 3f47613c7d3b24f42aea60196a18827f, type: 2}
+    Transition: 0
+  - responeText: Test2
+    dialogueObject: {fileID: 11400000, guid: 3f47613c7d3b24f42aea60196a18827f, type: 2}
+    Transition: 0

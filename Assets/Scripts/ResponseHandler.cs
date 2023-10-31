@@ -23,7 +23,6 @@ public class ResponseHandler : MonoBehaviour
     }
     public void ShowResponses(Response[] responses)
     {
-        float responseBoxHeight = 0;
 
         foreach (Response response in responses)
         {
@@ -32,12 +31,7 @@ public class ResponseHandler : MonoBehaviour
             responseButton.GetComponentInChildren<TextMeshProUGUI>().text = response.ResponseText;
             responseButton.GetComponent<Button>().onClick.AddListener(() => OnPickedResponse(response));
             tempResponseButton.Add(responseButton);
-
-            responseBoxHeight += responseButtonTemplate.sizeDelta.y;
         }
-        responseBox.sizeDelta = new Vector2(responseBox.sizeDelta.x, responseBoxHeight);
-
-        responseBox.gameObject.SetActive(true);
     }
 private void OnPickedResponse(Response response)
     {
