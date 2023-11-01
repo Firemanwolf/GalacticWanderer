@@ -51,11 +51,6 @@ public class DialogueUI : MonoBehaviour
             yield return typeWriterEffect.Run(dialogue.DialogueText, textLabel);
             if (i == dialogueObject.Dialogue.Length - 1 && dialogueObject.HasResponses) break;
             yield return new WaitForSeconds(0.2f);
-            if (!string.IsNullOrWhiteSpace(dialogue.ClipBoardInfo))
-            {
-                currentClipboardInfo = dialogue.ClipBoardInfo;
-                LinkHandler.isKeywordUsed = false;
-            }
             yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space) && typeWriterEffect.textfinished);
 
         }
@@ -86,6 +81,10 @@ public class DialogueUI : MonoBehaviour
 
     public void NextCharacter()
     {
+        foreach (GameObject item in treatmentSystem)
+        {
+            item.SetActive(false);
+        }
         character.CheckIfRecovered();
         GameManager.Instance.charIndex++;
         character = GameManager.Instance.characters[GameManager.Instance.charIndex];

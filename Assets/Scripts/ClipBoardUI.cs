@@ -23,8 +23,11 @@ public class ClipBoardUI : MonoBehaviour
 
     void OnAddInfo(string info)
     {
-        infos.Add(info);
-        texts[infos.Count - 1].text = info;
+        if (!infos.Contains(info))
+        {
+            infos.Add(info);
+            texts[infos.Count - 1].text = info;
+        }
     }
 
     private List<TMP_Text> texts = new List<TMP_Text>();

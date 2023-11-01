@@ -15,12 +15,11 @@ MonoBehaviour:
   dialogue:
   - speaker: You
     dialgoueText: What have you come in for today?
-    clipBoardInfo: 
     spriteIndex: 0
   - speaker: Character 1
     dialgoueText: "Straight to the point huh?! Then I\u2019ll cut to the chase. Those
-      lucky bastards grazed me with their lasers. Fix this wound up for me and I\u2019ll
-      leave you the hell alone. "
-    clipBoardInfo: Grazed by lasers
+      lucky bastards <link = \"laser\"><b><color=red>grazed</color></b></link> me
+      with their <link = \"grazed\"><b><color=red>lasers</color></b></link>. Fix
+      this wound up for me and I\u2019ll leave you the hell alone. "
     spriteIndex: 0
   responses: []

@@ -10,8 +10,6 @@ public class LinkHandler : MonoBehaviour, IPointerClickHandler
     public delegate void LearnInfoAction(string info);
     public static event LearnInfoAction OnLearnInfo;
 
-    public static bool isKeywordUsed = false;
-
     [SerializeField] private TMP_Text textBox;
 
     private void Awake()
@@ -25,11 +23,12 @@ public class LinkHandler : MonoBehaviour, IPointerClickHandler
 
         var linkTaggedText = TMP_TextUtilities.FindIntersectingLink(textBox, mousePosition, null);
 
-        if(linkTaggedText != -1 && !isKeywordUsed)
+        if(linkTaggedText != -1)
         {
+            TMP_LinkInfo linkInfo = textBox.textInfo.linkInfo[linkTaggedText];
+
             if(OnLearnInfo != null)
-                OnLearnInfo?.Invoke(DialogueUI.currentClipboardInfo);
-            isKeywordUsed = true;
+                OnLearnInfo?.Invoke(linkInfo.GetLinkText());
         }
     }
 }
