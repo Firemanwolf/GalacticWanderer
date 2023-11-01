@@ -89,6 +89,7 @@ public class DialogueUI : MonoBehaviour
         GameManager.Instance.charIndex++;
         character = GameManager.Instance.characters[GameManager.Instance.charIndex];
         GameManager.Instance.curedPoints = 0;
+        characterSprite.color = Color.white;
         ShowDialogue(character.StartDialogue);
         if (OnNextCharacter != null)
             OnNextCharacter();
