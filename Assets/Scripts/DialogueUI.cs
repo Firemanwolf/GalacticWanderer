@@ -88,6 +88,7 @@ public class DialogueUI : MonoBehaviour
         character.CheckIfRecovered();
         GameManager.Instance.charIndex++;
         character = GameManager.Instance.characters[GameManager.Instance.charIndex];
+        GameManager.Instance.curedPoints = 0;
         ShowDialogue(character.StartDialogue);
         if (OnNextCharacter != null)
             OnNextCharacter();

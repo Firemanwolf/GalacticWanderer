@@ -24,6 +24,7 @@ public class ResponseHandler : MonoBehaviour
     public void ShowResponses(Response[] responses)
     {
 
+        responseBox.gameObject.SetActive(true);
         foreach (Response response in responses)
         {
             GameObject responseButton = Instantiate(responseButtonTemplate.gameObject, responseContainer);
