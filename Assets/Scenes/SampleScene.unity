@@ -1587,7 +1587,9 @@ MonoBehaviour:
   speakerName: {fileID: 1786274875}
   character: {fileID: 11400000, guid: f5edcbc57eb7ea742aef9119ce1635c4, type: 2}
   characterSprite: {fileID: 433927431}
-  NextButton: {fileID: 238022007}
+  treatmentSystem:
+  - {fileID: 238022007}
+  - {fileID: 1076133964}
 --- !u!114 &1038265551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1621,7 +1623,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1076133965
 RectTransform:
   m_ObjectHideFlags: 0

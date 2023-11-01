@@ -11,7 +11,7 @@ public class DialogueUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI speakerName;
     [SerializeField] private Character character;
     [SerializeField] private Image characterSprite;
-    [SerializeField] private GameObject NextButton;
+    [SerializeField] private GameObject[] treatmentSystem;
     
 
     private ResponseHandler responseHandler;
@@ -70,7 +70,10 @@ public class DialogueUI : MonoBehaviour
         else
         {
             CloseDialogue();
-            NextButton.SetActive(true);
+            foreach (GameObject item in treatmentSystem)
+            {
+                item.SetActive(true);
+            }
         }
 
     }
