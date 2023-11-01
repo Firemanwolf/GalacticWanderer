@@ -6,7 +6,7 @@ using UnityEngine;
 public class DialogueContent
 {
     [SerializeField] private string speaker;
-    [SerializeField] [TextArea] private string  dialgoueText;
+    [SerializeField] [TextArea(15,20)] private string  dialgoueText;
     [SerializeField] private int spriteIndex;
 
     public string Speaker => speaker;

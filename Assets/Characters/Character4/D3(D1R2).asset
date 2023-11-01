@@ -15,12 +15,11 @@ MonoBehaviour:
   dialogue:
   - speaker: You
     dialgoueText: 'What have you come in for today? May I see your injuries?  '
-    clipBoardInfo: 
     spriteIndex: 0
   - speaker: Character 4
     dialgoueText: "I\u2019m not sick! I\u2019m only here because my superior ordered
-      me to. Something about being too tired and the fever made them worry. They
-      still see me as a child when I can hold my own out there just fine! "
-    clipBoardInfo: Fever
+      me to. Something about being too <link= \"123\"><b><color=red>tired</b></color></link>
+      and the <link= \"123\"><b><color=red>fever</b></color></link> made them worry.
+      They still see me as a child when I can hold my own out there just fine! "
     spriteIndex: 0
   responses: []
