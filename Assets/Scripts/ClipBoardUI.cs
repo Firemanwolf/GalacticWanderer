@@ -9,14 +9,14 @@ public class ClipBoardUI : MonoBehaviour
 
     void OnEnable()
     {
-        DialogueUI.OnLearnInfo += OnAddInfo;
+        LinkHandler.OnLearnInfo += OnAddInfo;
         DialogueUI.OnNextCharacter += ClearBoard;
     }
 
 
     void OnDisable()
     {
-        DialogueUI.OnLearnInfo -= OnAddInfo;
+        LinkHandler.OnLearnInfo -= OnAddInfo;
         DialogueUI.OnNextCharacter -= ClearBoard;
     }
 

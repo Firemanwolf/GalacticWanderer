@@ -11,6 +11,7 @@ public class DialogueUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI speakerName;
     [SerializeField] private Character character;
     [SerializeField] private Image characterSprite;
+    [SerializeField] private GameObject NextButton;
     
 
     private ResponseHandler responseHandler;
@@ -18,8 +19,7 @@ public class DialogueUI : MonoBehaviour
     
     
     //clipboard stuff
-    public delegate void LearnInfoAction(string info);
-    public static event LearnInfoAction OnLearnInfo;
+    public static string currentClipboardInfo;
     
     public delegate void NextCharacterAction();
     public static event NextCharacterAction OnNextCharacter;
@@ -48,16 +48,13 @@ public class DialogueUI : MonoBehaviour
             int ind = dialogueObject.Dialogue[i].SpriteIndex;
             characterSprite.sprite = character.CharacterSprite[ind];
             DialogueContent dialogue = dialogueObject.Dialogue[i];
-            //face.FacialExpression(dialogue);
             yield return typeWriterEffect.Run(dialogue.DialogueText, textLabel);
             if (i == dialogueObject.Dialogue.Length - 1 && dialogueObject.HasResponses) break;
             yield return new WaitForSeconds(0.2f);
             if (!string.IsNullOrWhiteSpace(dialogue.ClipBoardInfo))
             {
-                if (OnLearnInfo != null)
-                {
-                    OnLearnInfo(dialogue.ClipBoardInfo);
-                }
+                currentClipboardInfo = dialogue.ClipBoardInfo;
+                LinkHandler.isKeywordUsed = false;
             }
             yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space) && typeWriterEffect.textfinished);
 
@@ -73,7 +70,7 @@ public class DialogueUI : MonoBehaviour
         else
         {
             CloseDialogue();
-            NextCharacter();
+            NextButton.SetActive(true);
         }
 
     }
@@ -82,11 +79,11 @@ public class DialogueUI : MonoBehaviour
 
         dialogueBox.SetActive(false);
         textLabel.text = string.Empty;
-        
     }
 
     public void NextCharacter()
     {
+        character.CheckIfRecovered();
         GameManager.Instance.charIndex++;
         character = GameManager.Instance.characters[GameManager.Instance.charIndex];
         ShowDialogue(character.StartDialogue);

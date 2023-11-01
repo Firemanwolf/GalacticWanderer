@@ -22,15 +22,7 @@ public class GameManager : MonoBehaviour
     public Character[] characters;
     public int charIndex = 0;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int curedPoints;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

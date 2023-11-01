@@ -21,9 +21,9 @@ MonoBehaviour:
     spriteIndex: 0
   - speaker: Character 1
     dialgoueText: 'Those damn heathens! They managed to graze me with one of their
-      lasers. Give me your strongest medicine. Anything quick will do. I need to
-      be back in the field as soon as possible. Who knows when their next assault
-      will be?!  '
+      <link = "laser"><b><color=red>lasers</color></b></link>. Give me your strongest
+      medicine. Anything quick will do. I need to be back in the field as soon as
+      possible. Who knows when their next assault will be?!  '
     clipBoardInfo: Grazed by lasers
     spriteIndex: 0
   responses: []
