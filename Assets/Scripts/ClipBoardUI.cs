@@ -23,7 +23,7 @@ public class ClipBoardUI : MonoBehaviour
 
     void OnAddInfo(string info)
     {
-        if (!infos.Contains(info))
+        if (!infos.Contains(info) && infos.Count < texts.Count)
         {
             infos.Add(info);
             texts[infos.Count - 1].text = info;

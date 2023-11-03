@@ -49,13 +49,13 @@ public class DialogueUI : MonoBehaviour
             characterSprite.sprite = character.CharacterSprite[ind];
             DialogueContent dialogue = dialogueObject.Dialogue[i];
             yield return typeWriterEffect.Run(dialogue.DialogueText, textLabel);
-            if (i == dialogueObject.Dialogue.Length - 1 && dialogueObject.HasResponses) break;
             yield return new WaitForSeconds(0.2f);
             yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space) && typeWriterEffect.textfinished);
+            if (i == dialogueObject.Dialogue.Length - 1 && dialogueObject.HasResponses) break;
 
         }
 
-        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
+        //yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
         if (dialogueObject.HasResponses)
         {
             speakerName.text = "You";
