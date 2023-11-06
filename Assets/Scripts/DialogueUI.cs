@@ -11,7 +11,7 @@ public class DialogueUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI speakerName;
     [SerializeField] private Character character;
     [SerializeField] private Image characterSprite;
-    [SerializeField] private GameObject[] treatmentSystem;
+    [SerializeField] private GameObject treatmentSystem;
     
 
     private ResponseHandler responseHandler;
@@ -65,10 +65,7 @@ public class DialogueUI : MonoBehaviour
         else
         {
             CloseDialogue();
-            foreach (GameObject item in treatmentSystem)
-            {
-                item.SetActive(true);
-            }
+            treatmentSystem.SetActive(true);
         }
 
     }
@@ -81,10 +78,7 @@ public class DialogueUI : MonoBehaviour
 
     public void NextCharacter()
     {
-        foreach (GameObject item in treatmentSystem)
-        {
-            item.SetActive(false);
-        }
+        treatmentSystem.SetActive(false);
         character.CheckIfRecovered();
         GameManager.Instance.charIndex++;
         character = GameManager.Instance.characters[GameManager.Instance.charIndex];

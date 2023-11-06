@@ -11,29 +11,35 @@ public class Treatments : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
 
     public Canvas canvas;
 
+    public bool isDragging;
+
     private void Awake()
     {
         canvasGroup = GetComponent<CanvasGroup>();
         rect = GetComponent<RectTransform>();
-        originalPos = transform.position;
+        originalPos = transform.localPosition;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
         canvasGroup.alpha = .6f;
         canvasGroup.blocksRaycasts = false;
+        isDragging = true;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
         rect.anchoredPosition += eventData.delta/canvas.scaleFactor;
+        isDragging = true;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
-        transform.position = originalPos;
+        transform.localPosition = originalPos;
+        isDragging = false;
+        GetComponentInParent<TreatmentMenu>().StartCoroutine(GetComponentInParent<TreatmentMenu>().PutDown());
     }
 
     public void OnPointerDown(PointerEventData eventData)
