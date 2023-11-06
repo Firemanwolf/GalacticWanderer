@@ -12,6 +12,7 @@ public class DialogueUI : MonoBehaviour
     [SerializeField] private Character character;
     [SerializeField] private Image characterSprite;
     [SerializeField] private GameObject treatmentSystem;
+    [SerializeField] private GameObject nextButton;
     
 
     private ResponseHandler responseHandler;
@@ -66,6 +67,7 @@ public class DialogueUI : MonoBehaviour
         {
             CloseDialogue();
             treatmentSystem.SetActive(true);
+            nextButton.SetActive(true);
         }
 
     }
@@ -85,6 +87,7 @@ public class DialogueUI : MonoBehaviour
         GameManager.Instance.curedPoints = 0;
         characterSprite.color = Color.white;
         ShowDialogue(character.StartDialogue);
+        nextButton.SetActive(false);
         if (OnNextCharacter != null)
             OnNextCharacter();
     }

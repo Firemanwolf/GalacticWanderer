@@ -284,7 +284,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 238022007}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3.6275685, y: 3.6275685, z: 3.6275685}
   m_ConstrainProportionsScale: 0
@@ -295,7 +295,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -643, y: -458}
+  m_AnchoredPosition: {x: -643, y: 451}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &238022009
@@ -1299,6 +1299,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   curingAilment: 1
   canvas: {fileID: 1038265546}
+  isDragging: 0
 --- !u!114 &651236751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1524,6 +1525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heldUpPos: {x: 818, y: 5.7, z: 0}
   heldDownPos: {x: 1083, y: 5.7, z: 0}
+  draggingTreatment: 0
 --- !u!1 &927566068
 GameObject:
   m_ObjectHideFlags: 0
@@ -1922,6 +1924,7 @@ MonoBehaviour:
   character: {fileID: 11400000, guid: f5edcbc57eb7ea742aef9119ce1635c4, type: 2}
   characterSprite: {fileID: 433927431}
   treatmentSystem: {fileID: 698845394}
+  nextButton: {fileID: 238022007}
 --- !u!1 &1076133964
 GameObject:
   m_ObjectHideFlags: 0
@@ -1976,6 +1979,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   curingAilment: 0
   canvas: {fileID: 1038265546}
+  isDragging: 0
 --- !u!114 &1076133967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2741,6 +2745,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   curingAilment: 2
   canvas: {fileID: 1038265546}
+  isDragging: 0
 --- !u!114 &1504002311
 MonoBehaviour:
   m_ObjectHideFlags: 0
