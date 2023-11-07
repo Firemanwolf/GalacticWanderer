@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -10,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject resultPanel;
     [SerializeField] TypeWriterEffect typeWriter;
     [SerializeField] private GameObject nextButton;
+    public UnityAction EndAnimEvent;
     private void Awake() 
     { 
         // If there is an instance, and it's not me, delete myself.
@@ -36,9 +38,8 @@ public class GameManager : MonoBehaviour
             {
                 Destroy(character.GetChild(i).gameObject);
             }
-            StartCoroutine(AnnouncingResult("You've failed to cure this patient"));
         }
-        else StartCoroutine(AnnouncingResult("You've successfully cured this patient"));
+         StartCoroutine(AnnouncingResult("Next!"));
         Instantiate(nextCharacter.Ailment, character);
         
     }
@@ -54,5 +55,6 @@ public class GameManager : MonoBehaviour
         yield return typeWriter.Run(sentenceToType, resultPanel.GetComponentInChildren<TextMeshProUGUI>());
         yield return new WaitForSeconds(3f);
         resultPanel.SetActive(false);
+        EndAnimEvent?.Invoke();
     }
 }

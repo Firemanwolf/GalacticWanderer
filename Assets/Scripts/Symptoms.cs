@@ -24,9 +24,9 @@ public class Symptoms : MonoBehaviour , IDropHandler
             {
                 if(treatment.curingAilment == ailment)
                 {
+                    if(curedCharacter != null)character.sprite = curedCharacter;
                     Destroy(gameObject);
                 }
-                character.color = Color.red;
             }
         }
     }

@@ -32,6 +32,8 @@ public class DialogueUI : MonoBehaviour
 
         CloseDialogue();
         ShowDialogue(character.StartDialogue);
+
+        GameManager.Instance.EndAnimEvent += onNextEvent;
     }
 
     public void ShowDialogue(DialogueObject dialogueObject)
@@ -85,20 +87,34 @@ public class DialogueUI : MonoBehaviour
         if (!GameManager.Instance.IsLastCharacter()) 
         {
             character = GameManager.Instance.characters[GameManager.Instance.charIndex];
-            characterSprite.color = Color.white;
-            ShowDialogue(character.StartDialogue);
         }
         else 
         {
-            Color color = characterSprite.color;
-            color.a = 0;
-            characterSprite.color = color;
             CloseDialogue();
             nextButton.SetActive(false);
+            GameManager.Instance.EndAnimEvent -= onNextEvent;
         }
-        GameManager.Instance.CheckIfCured(character);
+        StartCoroutine(CharacterDisappear());
         nextButton.SetActive(false);
         if (OnNextCharacter != null)
             OnNextCharacter();
+    }
+
+    IEnumerator CharacterDisappear()
+    {
+        while (characterSprite.color.a > 0)
+        {
+            Color newColor = characterSprite.color;
+            newColor.a -= Time.deltaTime;
+            characterSprite.color = newColor;
+            yield return null;
+        }
+        GameManager.Instance.CheckIfCured(character);
+    }
+
+    private void onNextEvent()
+    {
+        characterSprite.color = Color.white;
+        ShowDialogue(character.StartDialogue);
     }
 }
