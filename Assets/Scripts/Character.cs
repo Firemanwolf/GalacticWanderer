@@ -9,18 +9,14 @@ public class Character : ScriptableObject
     [SerializeField] private string characterName;
     [SerializeField] private Sprite[] characterSprite;
     [SerializeField] private int symptoms;
+    [SerializeField] private GameObject ailment;
     
     public DialogueObject StartDialogue => startDialogue;
     public string CharacterName => characterName;
 
     public Sprite[] CharacterSprite => characterSprite;
 
-    public void CheckIfRecovered()
-    {
-        isCured = GameManager.Instance.curedPoints >= symptoms;
-    }
-
-    private bool isCured = false;
+    public GameObject Ailment => ailment;
 
 
 }

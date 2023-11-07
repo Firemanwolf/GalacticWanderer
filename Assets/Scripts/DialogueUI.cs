@@ -81,12 +81,22 @@ public class DialogueUI : MonoBehaviour
     public void NextCharacter()
     {
         treatmentSystem.SetActive(false);
-        character.CheckIfRecovered();
         GameManager.Instance.charIndex++;
-        character = GameManager.Instance.characters[GameManager.Instance.charIndex];
-        GameManager.Instance.curedPoints = 0;
-        characterSprite.color = Color.white;
-        ShowDialogue(character.StartDialogue);
+        if (!GameManager.Instance.IsLastCharacter()) 
+        {
+            character = GameManager.Instance.characters[GameManager.Instance.charIndex];
+            characterSprite.color = Color.white;
+            ShowDialogue(character.StartDialogue);
+        }
+        else 
+        {
+            Color color = characterSprite.color;
+            color.a = 0;
+            characterSprite.color = color;
+            CloseDialogue();
+            nextButton.SetActive(false);
+        }
+        GameManager.Instance.CheckIfCured(character);
         nextButton.SetActive(false);
         if (OnNextCharacter != null)
             OnNextCharacter();

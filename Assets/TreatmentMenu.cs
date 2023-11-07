@@ -9,16 +9,11 @@ public class TreatmentMenu : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public Vector3 heldDownPos;
     public bool draggingTreatment = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        draggingTreatment = CheckTreatment();
+        draggingTreatment =   CheckTreatment();
     }
 
     public bool CheckTreatment()

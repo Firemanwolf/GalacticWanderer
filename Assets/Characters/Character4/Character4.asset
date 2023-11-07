@@ -16,3 +16,5 @@ MonoBehaviour:
   characterName: Character4
   characterSprite:
   - {fileID: 21300000, guid: 0be73e874bed8994fab1ff14049d1f38, type: 3}
+  symptoms: 0
+  ailment: {fileID: 3393890362084691446, guid: 3171b3a9c4e102d40a65015726f0e596, type: 3}
