@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Text;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -37,10 +38,19 @@ public class TypeWriterEffect : MonoBehaviour
         int charIndex = 0;
                 while (!canceltyping && charIndex < textToType.Length)
                 {
+                    bool IsKeyWord = false;
                     t += Time.deltaTime * typewriterSpeed;
                     charIndex = Mathf.FloorToInt(t);
                     charIndex = Mathf.Clamp(charIndex, 0, textToType.Length);
-
+                    if (charIndex == textToType.Length) break;
+                    if (textToType[charIndex] == '<' && textToType[charIndex+1] == 'l') IsKeyWord = true;
+                    while (IsKeyWord)
+                    {
+                        t++;
+                        charIndex = Mathf.FloorToInt(t);
+                        charIndex = Mathf.Clamp(charIndex, 0, textToType.Length);
+                    if (textToType[charIndex] == 'k' && textToType[charIndex + 1] == '>') IsKeyWord = false;
+                    }
                     textLabel.text = textToType.Substring(0, charIndex);
                     yield return null;
                 }
