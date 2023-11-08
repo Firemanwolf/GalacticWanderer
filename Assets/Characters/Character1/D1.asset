@@ -13,24 +13,21 @@ MonoBehaviour:
   m_Name: D1
   m_EditorClassIdentifier: 
   dialogue:
-  - speaker: Intro
-    dialgoueText: 'A battleworn soldier approaches you, his piercing gaze fixed on
-      you as he waits for you to say something. '
-    clipBoardInfo: 
+  - speaker: 
+    dialgoueText: 'You call out for the next patient, and a human walks up to you
+      wearing the standard GPF-0007 armored uniform indicative of a soldier in the
+      Galaxy Preservation Force. Quite common around these parts recently.  '
     spriteIndex: 0
   responses:
-  - responeText: 'Greet them with a warm welcome '
+  - responeText: Welcome to the Intergalactic Rejuvenation Center, how may I help
+      you?
     dialogueObject: {fileID: 11400000, guid: 65f4337f39abaf846a44318665b63b82, type: 2}
     Transition: 0
-  - responeText: 'Directly ask about their condition '
+  - responeText: "The starship\u2019s guardian, Aeraf. Didn\u2019t you retire? What's
+      the occasion? "
     dialogueObject: {fileID: 11400000, guid: cd44a40812a65d842bb09dc70922d263, type: 2}
     Transition: 0
-  - responeText: 'Decline to see them '
-    dialogueObject: {fileID: 11400000, guid: 3f47613c7d3b24f42aea60196a18827f, type: 2}
-    Transition: 0
-  - responeText: Test1
-    dialogueObject: {fileID: 11400000, guid: 3f47613c7d3b24f42aea60196a18827f, type: 2}
-    Transition: 0
-  - responeText: Test2
+  - responeText: "You know the drill. There isn\u2019t enough to save everyone. Please
+      leave. "
     dialogueObject: {fileID: 11400000, guid: 3f47613c7d3b24f42aea60196a18827f, type: 2}
     Transition: 0

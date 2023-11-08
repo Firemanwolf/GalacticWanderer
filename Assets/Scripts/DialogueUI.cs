@@ -13,7 +13,9 @@ public class DialogueUI : MonoBehaviour
     [SerializeField] private Image characterSprite;
     [SerializeField] private GameObject treatmentSystem;
     [SerializeField] private GameObject nextButton;
-    
+
+    [SerializeField] private DialogueObject intro;
+    [SerializeField] private DialogueObject dayOver;
 
     private ResponseHandler responseHandler;
     private TypeWriterEffect typeWriterEffect;
@@ -31,13 +33,14 @@ public class DialogueUI : MonoBehaviour
         responseHandler = GetComponent<ResponseHandler>();
 
         CloseDialogue();
-        ShowDialogue(character.StartDialogue);
-
+        //ShowDialogue(character.StartDialogue);
+        ShowDialogue(intro);
         GameManager.Instance.EndAnimEvent += onNextEvent;
     }
 
     public void ShowDialogue(DialogueObject dialogueObject)
     {
+        
         dialogueBox.SetActive(true);
         
         StartCoroutine(StepThroughDialogue(dialogueObject));
@@ -49,7 +52,7 @@ public class DialogueUI : MonoBehaviour
         {
             speakerName.text = dialogueObject.Dialogue[i].Speaker;
             int ind = dialogueObject.Dialogue[i].SpriteIndex;
-            characterSprite.sprite = character.CharacterSprite[ind];
+            //characterSprite.sprite = character.CharacterSprite[ind];
             DialogueContent dialogue = dialogueObject.Dialogue[i];
             yield return typeWriterEffect.Run(dialogue.DialogueText, textLabel);
             yield return new WaitForSeconds(0.2f);
@@ -68,8 +71,20 @@ public class DialogueUI : MonoBehaviour
         else
         {
             CloseDialogue();
-            treatmentSystem.SetActive(true);
-            nextButton.SetActive(true);
+            if (dialogueObject == intro|| dialogueObject==character.FinishDialogue)
+            {
+                NextCharacter();
+            }
+            else if (!treatmentSystem.activeSelf&& character!=null)
+            {
+                treatmentSystem.SetActive(true);
+                nextButton.SetActive(true);
+            }
+            else
+            {
+                NextCharacter();
+            }
+
         }
 
     }
@@ -80,6 +95,12 @@ public class DialogueUI : MonoBehaviour
         textLabel.text = string.Empty;
     }
 
+
+    public void ShowFinalDialogue()
+    {
+        ShowDialogue(character.FinishDialogue);
+        nextButton.SetActive(false);
+    }
     public void NextCharacter()
     {
         treatmentSystem.SetActive(false);
@@ -109,12 +130,26 @@ public class DialogueUI : MonoBehaviour
             characterSprite.color = newColor;
             yield return null;
         }
-        GameManager.Instance.CheckIfCured(character);
+
+        yield return new WaitForSeconds(1f);
+        
+        if (GameManager.Instance.charIndex <= 1)
+            GameManager.Instance.NextCharacter();
+        GameManager.Instance.EndAnimEvent();
     }
 
     private void onNextEvent()
     {
-        characterSprite.color = Color.white;
-        ShowDialogue(character.StartDialogue);
+        if (GameManager.Instance.charIndex <= 1)
+        {
+            characterSprite.sprite = character.CharacterSprite[0];
+            characterSprite.color = Color.white;
+            ShowDialogue(character.StartDialogue);
+        }
+        else
+        {
+            ShowDialogue(dayOver);
+        }
+
     }
 }

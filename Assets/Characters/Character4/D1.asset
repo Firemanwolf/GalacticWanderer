@@ -13,18 +13,24 @@ MonoBehaviour:
   m_Name: D1
   m_EditorClassIdentifier: 
   dialogue:
-  - speaker: Intro
-    dialgoueText: 'An adolescent child walks up to you begrudgingly wearing their
-      army uniform.  '
-    clipBoardInfo: 
+  - speaker: You
+    dialgoueText: Next!
+    spriteIndex: 0
+  - speaker: Maverock
+    dialgoueText: "As you call for the next patient, the ground trembles with the
+      sound of footsteps as a massive outlander fills the room. This must be the
+      rumored \u201Cspecies from the primal stars\u201D that you\u2019ve heard so
+      much about. Afterall, their planet, Phaeton, isn\u2019t far from here.  "
     spriteIndex: 0
   responses:
-  - responeText: 'Greet them with a warm welcome '
+  - responeText: 'Welcome to the Intergalactic Rejuvenation Center, how may I help
+      you? '
     dialogueObject: {fileID: 11400000, guid: 8d92db84b2243714abd551ab7f81af48, type: 2}
     Transition: 0
-  - responeText: 'Directly ask about their condition '
+  - responeText: After all these years, a fresh face! Welcome to the Galaxy!
     dialogueObject: {fileID: 11400000, guid: 59492535dc79c0f41a510fa0aa50a350, type: 2}
     Transition: 0
-  - responeText: 'Decline to see them '
+  - responeText: "I\u2019m afraid there is not much I can do to help you. Please
+      leave. "
     dialogueObject: {fileID: 11400000, guid: 74eda87c78b0aa74092a446bbbb8c511, type: 2}
     Transition: 0

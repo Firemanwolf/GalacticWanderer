@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd3c55e890d7a09409c4a4a5c92a338f, type: 3}
+  m_Name: D5(D2R1)
+  m_EditorClassIdentifier: 
+  dialogue:
+  - speaker: You
+    dialgoueText: 'I said, welcome to the Intergalactic Rejuvenation Center. How
+      can I help? '
+    spriteIndex: 0
+  - speaker: Maverock
+    dialgoueText: "Ohh sorry, I\u2019m getting a little old. <link=\"Hearing issues\">Can't
+      hear </link>as well as I used to. So this is the rumored Intergalactic Rejuvenation
+      Center! I heard you threw the last guy into a void for causing a ruckus here.
+      I\u2019d test my strength against yours, but I\u2019d never expect you to look
+      so\u2026flimsy.  "
+    spriteIndex: 0
+  responses:
+  - responeText: "I\u2019m a doctor, I cure injuries, not cause them. Now for your
+      condition\u2026"
+    dialogueObject: {fileID: 11400000, guid: 0b575b590c029594fa2c1f8c28178ccc, type: 2}
+    Transition: 0
+  - responeText: News sure spreads fast. Even the newcomers of the galaxy know now,
+      huh.
+    dialogueObject: {fileID: 0}
+    Transition: 0
+  - responeText: Haha, looks can be rather deceiving. Are you looking for a fight?
+    dialogueObject: {fileID: 0}
+    Transition: 0

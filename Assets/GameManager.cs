@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -29,18 +31,11 @@ public class GameManager : MonoBehaviour
     public Character[] characters;
     public int charIndex = 0;
 
-    public void CheckIfCured(Character nextCharacter) 
+    public void NextCharacter()
     {
-        bool isCured =  character.childCount == 0;
-        if (!isCured)
-        {
-            for (int i = 0; i < character.childCount; i++)
-            {
-                Destroy(character.GetChild(i).gameObject);
-            }
-        }
-         StartCoroutine(AnnouncingResult("Next!"));
-        Instantiate(nextCharacter.Ailment, character);
+        if(character.childCount!=0)
+            Destroy(character.GetChild(0).gameObject);
+        Instantiate(characters[charIndex].Ailment, character);
         
     }
 
@@ -49,12 +44,11 @@ public class GameManager : MonoBehaviour
         return (charIndex >= characters.Length);
     }
 
-    IEnumerator AnnouncingResult(string sentenceToType)
+    private void Update()
     {
-        resultPanel.SetActive(true);
-        yield return typeWriter.Run(sentenceToType, resultPanel.GetComponentInChildren<TextMeshProUGUI>());
-        yield return new WaitForSeconds(3f);
-        resultPanel.SetActive(false);
-        EndAnimEvent?.Invoke();
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 }

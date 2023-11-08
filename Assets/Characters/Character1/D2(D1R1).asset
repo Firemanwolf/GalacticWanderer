@@ -14,14 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - speaker: You
-    dialgoueText: 'Welcome to the Intergalactic Rejuvenation Center, the neutral
-      ground and treatment facility open to all sentient life forms. How may I help
-      you today? '
+    dialgoueText: Welcome to the Intergalactic Rejuvenation Center, how may I help
+      you?
     spriteIndex: 0
-  - speaker: Character 1
-    dialgoueText: 'Those damn heathens! They managed to  <link= "123"><b><color=red>graze
-      me</b></color></link> with one of their <link= "graze"><b><color=red>lasers</b></color></link>.
-      Give me your strongest medicine. Anything quick will do. I need to be back
-      in the field as soon as possible. Who knows when their next assault will be?! '
+  - speaker: Aeraf
+    dialgoueText: "I feel rather <link=\"dizzy\">dizzy</link> and <link=\"tired\">tired</link>.
+      <link=\"hazy memory\">The battlefield\u2019s been a blur.</link> Lasers everywhere,
+      nuclear shockwaves, and all those damn <link=\"lizards?\">lizards</link>. Please,
+      I need to get back on the field as soon as possible. My comrades need me! "
     spriteIndex: 0
   responses: []

@@ -14,16 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - speaker: You
-    dialgoueText: 'Welcome to the Intergalactic Rejuvenation Center, the neutral
-      ground and treatment facility open to all sentient life forms. Is there anything
-      I can do to help you today? '
+    dialgoueText: 'Welcome to the Intergalactic Rejuvenation Center, how may I help
+      you? '
     spriteIndex: 0
-  - speaker: Character 4
-    dialgoueText: "It\u2019s nothing serious, I just have a small <link= \"123\"><b><color=red>fever</b></color></link>
-      and feel a bit <link= \"123\"><b><color=red>tired</b></color></link>. Also
-      these stupid <link= \"123\"><b><color=red>rashes</b></color></link> have just
-      been popping up out of nowhere and won\u2019t go away. My superior must have
-      seen it and that's why they sent me here. Can you help me get rid of them so
-      that I can go back?   "
+  - speaker: Maverock
+    dialgoueText: Huh? What did you say?
     spriteIndex: 0
-  responses: []
+  responses:
+  - responeText: 'I said, welcome to the Intergalactic Rejuvenation Center. How can
+      I help? '
+    dialogueObject: {fileID: 11400000, guid: 35d00c30330a92b41bd3029504448782, type: 2}
+    Transition: 0

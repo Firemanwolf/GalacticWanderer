@@ -3,7 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
+using UnityEngine.UI;
+using Image = UnityEngine.UI.Image;
 
 public class ClipBoardUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -24,22 +28,38 @@ public class ClipBoardUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     void OnAddInfo(string info)
     {
-        StopAllCoroutines();
-        StartCoroutine(AddInfo(info));
+        if (!infos.Contains(info) && infos.Count < texts.Count&&!adding)
+        {
+            infos.Add(info);
+            StopCoroutine(PutDown());
+            StartCoroutine(AddInfo(info));
+        }
+    }
+
+
+    private void Update()
+    {
+        if (GameManager.Instance.charIndex == 0 || GameManager.Instance.charIndex == 1)
+        {
+            Character c = GameManager.Instance.characters[GameManager.Instance.charIndex];
+            nameText.text = "Name: " + c.CharacterName;
+            raceText.text = "Race: " + c.Race;
+            face.sprite = c.Face;
+        }
+           
     }
 
     IEnumerator AddInfo(string info)
     {
-        StartCoroutine(HoldUp());
-        yield return new WaitForSeconds(0.5f);
-        SoundManager.Instance.PlaySFX(writing);
-        if (!infos.Contains(info) && infos.Count < texts.Count)
-        {
-            infos.Add(info);
+            adding = true;
+            StartCoroutine(HoldUp());
+            yield return new WaitForSeconds(0.5f);
+            SoundManager.Instance.PlaySFX(writing);
             texts[infos.Count - 1].text = info;
-        }
-        yield return new WaitForSeconds(1f);
-        StartCoroutine(PutDown());
+            yield return new WaitForSeconds(1f);
+            StartCoroutine(PutDown());
+            adding = false;
+
     }
 
     private List<TMP_Text> texts = new List<TMP_Text>();
@@ -53,14 +73,20 @@ public class ClipBoardUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     private Vector3 heldDownPos;
 
     public AudioClip writing;
+
+    [SerializeField] private TMP_Text nameText;
+    [SerializeField] private TMP_Text raceText;
+    [SerializeField] private Image face;
+
+    private bool adding;
     // Start is called before the first frame update
     void Start()
     {
         infos.Clear();
 
-        for (int i = 0; i < clipboard.childCount; i++)
+        for (int i = 0; i < clipboard.GetChild(0).childCount; i++)
         {
-            texts.Add(clipboard.GetChild(i).GetComponent<TMP_Text>());
+            texts.Add(clipboard.GetChild(0).GetChild(i).GetComponent<TMP_Text>());
         }
         foreach (var text in texts)
         {

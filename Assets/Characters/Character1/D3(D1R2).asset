@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - speaker: You
-    dialgoueText: What have you come in for today?
+    dialgoueText: "The starship\u2019s guardian, Aeraf. Didn\u2019t you retire? What's
+      the occasion? "
     spriteIndex: 0
-  - speaker: Character 1
+  - speaker: Aeraf
     dialgoueText: "Straight to the point huh?! Then I\u2019ll cut to the chase. Those
-      lucky bastards <link = \"laser\"><b><color=red>grazed</color></b></link> me
-      with their <link = \"grazed\"><b><color=red>lasers</color></b></link>. Fix
+      lucky bastards <link = \"grazed\"><b><color=red>grazed</color></b></link> me
+      with their <link = \"lasers\"><b><color=red>lasers</color></b></link>. Fix
       this wound up for me and I\u2019ll leave you the hell alone. "
     spriteIndex: 0
   responses: []

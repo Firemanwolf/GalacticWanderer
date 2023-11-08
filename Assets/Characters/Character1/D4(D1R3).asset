@@ -14,15 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - speaker: You
-    dialgoueText: "I\u2019m afraid we won\u2019t be able to treat you today. Supplies
-      are tight and there is only so much we can do. "
-    clipBoardInfo: 
+    dialgoueText: "You know the drill. There isn\u2019t enough to save everyone.
+      Please leave. "
     spriteIndex: 0
-  - speaker: Character 1
+  - speaker: Aeraf
     dialgoueText: "Leaving a patient to fend for themselves huh\u2026so much for
       \u201Copen to all\u201D. And here I thought that you would be different from
       those heathens. But you outlanders are all the same. Damn it! I\u2019ve wasted
       too much time getting here. No matter, I don\u2019t need your help anyways. "
-    clipBoardInfo: 
     spriteIndex: 0
   responses: []

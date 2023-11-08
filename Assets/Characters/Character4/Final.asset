@@ -10,15 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd3c55e890d7a09409c4a4a5c92a338f, type: 3}
-  m_Name: D4(D1R3)
+  m_Name: Final
   m_EditorClassIdentifier: 
   dialogue:
-  - speaker: You
-    dialgoueText: "I\u2019m sorry, we won\u2019t be able to treat you today. Supplies
-      are tight and there is only so much we can do. "
-    spriteIndex: 0
   - speaker: Maverock
-    dialgoueText: "It\u2019s not like I wanted to be here anyways\u2026. If it wasn\u2019t
-      for my orders, I would still be out there fighting! Thanks for nothing!  "
+    dialgoueText: Thanks Doc! Feeling better already!
     spriteIndex: 0
   responses: []

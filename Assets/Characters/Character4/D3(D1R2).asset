@@ -16,7 +16,7 @@ MonoBehaviour:
   - speaker: You
     dialgoueText: 'What have you come in for today? May I see your injuries?  '
     spriteIndex: 0
-  - speaker: Character 4
+  - speaker: Maverock
     dialgoueText: "I\u2019m not sick! I\u2019m only here because my superior ordered
       me to. Something about being too <link= \"123\"><b><color=red>tired</b></color></link>
       and the <link= \"123\"><b><color=red>fever</b></color></link> made them worry.

@@ -27,8 +27,10 @@ public class LinkHandler : MonoBehaviour, IPointerClickHandler
         {
             TMP_LinkInfo linkInfo = textBox.textInfo.linkInfo[linkTaggedText];
 
+            Debug.Log(linkInfo.GetLinkID());
+            
             if(OnLearnInfo != null)
-                OnLearnInfo?.Invoke(linkInfo.GetLinkText());
+                OnLearnInfo?.Invoke(linkInfo.GetLinkID());
         }
     }
 }
